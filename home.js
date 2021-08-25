@@ -8639,3 +8639,24 @@ const addToBasket=(productId)=>{
     location.reload();
 }
 
+
+
+function myFunction(x) {
+    if (x.matches) { // If media query matches
+        var element = document.getElementById("product-col");
+        element.classList.add("col-12");
+        element.classList.remove("col-2");
+        var element = document.getElementById("product-tab"); 
+        element.classList.remove("flex-column");
+    } else {
+        var element = document.getElementById("product-col");
+        element.classList.add("col-2");
+        element.classList.remove("col-12");
+        var element = document.getElementById("product-tab"); 
+        element.classList.add("flex-column");
+    }
+  }
+  
+  var x = window.matchMedia("(max-width: 700px)")
+  myFunction(x) // Call listener function at run time
+  x.addListener(myFunction) // Attach listener function on state changes
